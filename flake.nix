@@ -16,7 +16,9 @@
     name = "Gehrig Dixon";
     timezone = "America/Phoenix";
     locale = "en_US.UTF-8";
-    nvidia = {use ? false}: use; 
+    nvidia = false;
+    virtualization = true;
+    
 
   #  term = (if desktop == plasma then "konsole" else (if desktop == gnome then "blackbox-term" else null));
   in {
@@ -39,6 +41,7 @@
           inherit desktop;
           inherit nixosGens;
           inherit nvidia;
+          inherit virtualization;
         };
       };
 
@@ -55,7 +58,8 @@
           inherit locale;
           inherit desktop;
           inherit nixosGens;
-          nvidia {use = true};
+          nvidia = true;
+          inherit virtualization;
         };
       };
     };
