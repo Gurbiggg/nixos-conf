@@ -2,8 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, username, name, timezone, locale, desktop, nixosGens, hostname, ... }:
+{ config, pkgs, username, name, timezone, locale, desktop, nixosGens, hostname, nvidia, virtualization, ... }:
 
+let 
+  nvidia-enable = {
+    true = [ (import ./nvidia.nix)];
+    false = [];
+  };
+
+  virt-enable = {
+    true = [ (import ./virtualization.nix)];
+    false = [];
+  };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -11,9 +22,10 @@
       ./pipewire.nix
       ./pkgs.nix
       ../user/user.nix
-
       (./de + "/${desktop}.nix")
-    ];
+    ] ++ 
+    (nvidia-enable.nvidia or []) ++
+    (virt-enable.virtualization or []);
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
