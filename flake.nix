@@ -16,6 +16,8 @@
     name = "Gehrig Dixon";
     timezone = "America/Phoenix";
     locale = "en_US.UTF-8";
+    nvidia = {use ? false}: use; 
+
   #  term = (if desktop == plasma then "konsole" else (if desktop == gnome then "blackbox-term" else null));
   in {
     nixosConfigurations = {
@@ -36,9 +38,10 @@
           inherit locale;
           inherit desktop;
           inherit nixosGens;
+          inherit nvidia;
         };
       };
-        
+
       legion = nixpkgs.lib.nixosSystem{
         system = "x86_64-linux";
         modules = [
@@ -52,6 +55,7 @@
           inherit locale;
           inherit desktop;
           inherit nixosGens;
+          nvidia {use = true};
         };
       };
     };
