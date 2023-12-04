@@ -26,16 +26,32 @@
       framework = nixpkgs.lib.nixosSystem{
         system = "x86_64-linux";
         modules = [ 
-          ./hosts/framework/configuration.nix 
+          ./system/configuration.nix 
         ];
         specialArgs = {
+          hostname = "framework";
           inherit username;
           inherit name;
           inherit timezone;
           inherit locale;
           inherit desktop;
           inherit nixosGens;
-          hostname = "framework";
+        };
+      };
+        
+      legion = nixpkgs.lib.nixosSystem{
+        system = "x86_64-linux";
+        modules = [
+          ./system/configuration.nix
+        ];
+        specialArgs = {
+          hostname = "legion";
+          inherit username;
+          inherit name;
+          inherit timezone;
+          inherit locale;
+          inherit desktop;
+          inherit nixosGens;
         };
       };
     };

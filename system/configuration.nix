@@ -7,10 +7,10 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../system/pipewire.nix
-      ../../system/pkgs.nix
-      ../../user/user.nix
+      (../hosts + "/${hostname}" + /hardware-configuration.nix)
+      ./pipewire.nix
+      ./pkgs.nix
+      ../user/user.nix
 
       (../../system/de + "/${desktop}.nix")
     ];
