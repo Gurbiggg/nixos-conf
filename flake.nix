@@ -16,6 +16,7 @@
     name = "Gehrig Dixon";
     timezone = "America/Phoenix";
     locale = "en_US.UTF-8";
+  #  term = (if desktop == plasma then "konsole" else (if desktop == gnome then "blackbox-term" else null));
   in {
     nixosConfigurations = {
     # On first rebuild you need to specify which 

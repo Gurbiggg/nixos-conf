@@ -1,6 +1,6 @@
 { config, pkgs, username, ... }:
 {
-  users.users.${username}.packages = with pkgs; [
+  users.users.${username}.packages = (with pkgs; [
     arduino
     bottles
     discord
@@ -17,5 +17,7 @@
     virt-manager
     vlc
     vscode
-  ];
+  ]) ++ (with pkgs.vscode-extensions; [
+    jnoortheen.nix-ide
+  ]);
 }

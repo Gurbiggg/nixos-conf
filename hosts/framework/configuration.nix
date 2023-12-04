@@ -33,18 +33,17 @@
     LC_MEASUREMENT = locale;
     LC_MONETARY = locale;
     LC_NAME = locale;
-    LC_NUMERIC = locale;
+#    LC_NUMERIC = locale;
     LC_PAPER = locale;
     LC_TELEPHONE = locale;
-    LC_TIME = locale;
+#    LC_TIME = locale;
   };
 
   # Bootloader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-    systemd-boot.configurationLimit = nixosGens;
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = nixosGens;
+  
 
   # Enable the OpenSSH daemon.  
   services.openssh.enable = true;
