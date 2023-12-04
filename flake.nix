@@ -58,7 +58,8 @@
           inherit locale;
           inherit desktop;
           inherit nixosGens;
-          nvidia = true;
+          #nvidia = true;
+          inherit nvidia;
           inherit virtualization;
         };
       };
