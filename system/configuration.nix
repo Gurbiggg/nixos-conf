@@ -12,7 +12,7 @@
       ./pkgs.nix
       ../user/user.nix
 
-      (../../system/de + "/${desktop}.nix")
+      (./system/de + "/${desktop}.nix")
     ];
 
   # Enable flakes
