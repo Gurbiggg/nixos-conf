@@ -8,7 +8,7 @@
   outputs = { self, nixpkgs, ... }:
   let
     # Options: gnome, plasma
-    desktop = "plasma";
+    desktop = "gnome";
     
     # NixOS generation backups
     nixosGens = 10;
@@ -18,9 +18,7 @@
     locale = "en_US.UTF-8";
     nvidia = false;
     virtualization = true;
-    
 
-  #  term = (if desktop == plasma then "konsole" else (if desktop == gnome then "blackbox-term" else null));
   in {
     nixosConfigurations = {
     # On first rebuild you need to specify which 
@@ -40,9 +38,7 @@
           inherit locale;
           inherit desktop;
           inherit nixosGens;
-          inherit nvidia;
           inherit virtualization;
-          games = false;
         };
       };
 
@@ -61,7 +57,6 @@
           inherit locale;
           inherit desktop;
           inherit nixosGens;
-          #nvidia = true;
           inherit virtualization;
         };
       };
