@@ -19,5 +19,7 @@
     vscode
   ]) ++ (with pkgs.vscode-extensions; [
     jnoortheen.nix-ide
+    ms-python.python
+    vscodevim.vim
   ]);
 }
