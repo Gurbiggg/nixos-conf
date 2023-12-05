@@ -50,6 +50,8 @@
         system = "x86_64-linux";
         modules = [
           ./system/configuration.nix
+          ./system/nvidia.nix
+          ./user/games.nix
         ];
         specialArgs = {
           hostname = "legion";
@@ -60,9 +62,7 @@
           inherit desktop;
           inherit nixosGens;
           #nvidia = true;
-          inherit nvidia;
           inherit virtualization;
-          games = true;
         };
       };
     };

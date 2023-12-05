@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, username, name, timezone, locale, desktop, nixosGens, hostname, nvidia, virtualization, games, ... }:
+{ config, pkgs, lib, username, name, timezone, locale, desktop, nixosGens, hostname, virtualization, ... }:
 
 {
   imports =
@@ -13,13 +13,6 @@
       ../user/user.nix
       (./de + "/${desktop}.nix")
     ];
-
-  lib.mkIf (nvidia == true) {
-    imports = [
-      ./nvidia.nix
-      
-    ];
-  };
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
