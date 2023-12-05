@@ -42,6 +42,7 @@
           inherit nixosGens;
           inherit nvidia;
           inherit virtualization;
+          games = false;
         };
       };
 
@@ -61,6 +62,7 @@
           #nvidia = true;
           inherit nvidia;
           inherit virtualization;
+          games = true;
         };
       };
     };

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, username, name, timezone, locale, desktop, nixosGens, hostname, nvidia, virtualization, ... }:
+{ config, pkgs, username, name, timezone, locale, desktop, nixosGens, hostname, nvidia, virtualization, games, ... }:
 
 let 
   nvidia-enable = {
@@ -12,6 +12,11 @@ let
 
   virt-enable = {
     true = [ (import ./virtualization.nix)];
+    false = [];
+  };
+
+  games-enable = {
+    true = [ (import ../user/games.nix)];
     false = [];
   };
 in
@@ -25,7 +30,8 @@ in
       (./de + "/${desktop}.nix")
     ] ++ 
     (nvidia-enable.nvidia or []) ++
-    (virt-enable.virtualization or []);
+    (virt-enable.virtualization or []) ++
+    (games-enable.games or []);
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
