@@ -55,9 +55,10 @@
           inherit name;
           inherit timezone;
           inherit locale;
-          inherit desktop;
+          # inherit desktop;
           inherit nixosGens;
           inherit virtualization;
+          desktop = "plasma";
         };
       };
     };

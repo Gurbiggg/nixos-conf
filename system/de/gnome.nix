@@ -5,7 +5,7 @@
     ];
     services.xserver = {
         displayManager.gdm.enable = true;
-        desktopManger.gnome.enable = true;
+        desktopManager.gnome.enable = true;
     };
 
     environment.gnome.excludePackages = (with pkgs; [
