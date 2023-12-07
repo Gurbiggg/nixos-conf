@@ -15,6 +15,9 @@
         gnome-music
         epiphany
         geary
+        totem
+        yelp
+        file-roller
         iagno
         hitori
         atomix
@@ -22,9 +25,9 @@
 
     environment.systemPackages = with pkgs; [
         blackbox-terminal
-        gnome-tweaks
         gnome-extension-manager
         gnome.gnome-boxes
         gnome.dconf-editor
+	    gnome.gnome-tweaks	
     ];
 }

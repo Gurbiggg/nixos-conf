@@ -17,8 +17,8 @@
     virt-manager
     vlc
     vscode
+    vscode-extensions.jnoortheen.nix-ide
   ]) ++ (with pkgs.vscode-extensions; [
-    jnoortheen.nix-ide
     ms-python.python
     vscodevim.vim
   ]);
