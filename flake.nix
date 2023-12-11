@@ -46,8 +46,8 @@
         system = "x86_64-linux";
         modules = [
           ./system/configuration.nix
-          ./system/nvidia.nix
-          ./user/games.nix
+          # ./system/nvidia.nix
+          # ./user/games.nix
         ];
         specialArgs = {
           hostname = "legion";
