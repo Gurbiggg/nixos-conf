@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, username, name, timezone, locale, desktop, nixosGens, hostname, virtualization, ... }:
+{ config, pkgs, lib, username, name, timezone, locale, desktop, nixosGens, hostname, virtualization, configPath, ... }:
 
 {
   imports =
@@ -18,6 +18,8 @@
     "electron-25.9.0"
   ];
 
+  # Set NixOS config path
+  nix.nixPath = [ "nixos-config=${configPath}" ];
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   

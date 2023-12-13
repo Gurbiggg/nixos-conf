@@ -18,6 +18,7 @@
     locale = "en_US.UTF-8";
     nvidia = false;
     virtualization = true;
+    configPath = /home + "/${username}" + /nixos-conf;
 
   in {
     nixosConfigurations = {
@@ -39,6 +40,7 @@
           inherit desktop;
           inherit nixosGens;
           inherit virtualization;
+          inherit configPath;
         };
       };
 
