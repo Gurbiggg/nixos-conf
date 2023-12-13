@@ -13,6 +13,10 @@
       ../user/user.nix
       (./de + "/${desktop}.nix")
     ];
+  
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
