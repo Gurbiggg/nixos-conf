@@ -3,9 +3,11 @@
   
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }:
   let
     # Options: gnome, plasma
     desktop = "gnome";
@@ -19,6 +21,7 @@
     nvidia = false;
     virtualization = true;
     configPath = /home + "/${username}" + /nixos-conf;
+    pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
   in {
     nixosConfigurations = {
@@ -62,6 +65,13 @@
           inherit virtualization;
           desktop = "plasma";
         };
+      };
+    };
+
+    homeConfigurations = {
+      gurbiggg = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./user/home.nix];
       };
     };
   };
