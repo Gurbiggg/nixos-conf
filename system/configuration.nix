@@ -19,7 +19,7 @@
   ];
 
   # Set NixOS config path
-  nix.nixPath = [ "nixos-config=${configPath}" ];
+  #  nix.nixPath = [ "nixos-config=${configPath}" ];
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
