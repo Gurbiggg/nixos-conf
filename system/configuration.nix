@@ -17,6 +17,9 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
+  
+  # fix for vscode?
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Set NixOS config path
   #  nix.nixPath = [ "nixos-config=${configPath}" ];
