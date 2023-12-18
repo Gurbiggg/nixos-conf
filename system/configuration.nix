@@ -32,6 +32,7 @@
     dates = "weekly";
     options = "--delete-older-than 14d";
   };
+  nix.optimise.automatic = true;
 
   # Set hostname, determined by flake configuration
   networking.hostName = hostname;

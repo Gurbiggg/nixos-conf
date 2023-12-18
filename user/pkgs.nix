@@ -6,6 +6,7 @@
     discord
     firefox
     godot_4
+    gparted
     inkscape
     kicad
     krita
