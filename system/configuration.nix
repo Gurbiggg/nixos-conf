@@ -18,7 +18,7 @@
     "electron-25.9.0"
   ];
   
-  # fix for vscode?
+  # fix for vscode? exports wayland variables so vscode can use it
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Set NixOS config path
@@ -26,6 +26,13 @@
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
+  # Setup garbage collection to run automatically
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
+
   # Set hostname, determined by flake configuration
   networking.hostName = hostname;
 
