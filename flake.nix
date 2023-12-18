@@ -62,7 +62,7 @@
           inherit locale;
           # inherit desktop;
           inherit nixosGens;
-          inherit virtualization;
+          # inherit virtualization;
           desktop = "plasma";
           inherit configPath;
         };
