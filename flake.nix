@@ -64,6 +64,7 @@
           inherit nixosGens;
           inherit virtualization;
           desktop = "plasma";
+          inherit configPath;
         };
       };
     };
