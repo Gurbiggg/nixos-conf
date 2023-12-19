@@ -66,6 +66,14 @@
     # EDITOR = "emacs";
   };
 
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+    extraConfig = ''
+      (setq standard-indent 2)
+    '';
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
