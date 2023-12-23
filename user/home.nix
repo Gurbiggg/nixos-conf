@@ -5,7 +5,10 @@
   # manage.
   home.username = "gurbiggg";
   home.homeDirectory = "/home/gurbiggg";
-
+  imports = [ 
+    ./emacs.nix
+    
+    ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -64,14 +67,6 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-  };
-
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacs;
-    extraConfig = ''
-      (setq standard-indent 2)
-    '';
   };
 
   # Let Home Manager install and manage itself.
