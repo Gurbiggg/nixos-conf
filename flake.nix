@@ -68,7 +68,6 @@
           inherit name;
           inherit timezone;
           inherit locale;
-          # inherit desktop;
           inherit nixosGens;
           # inherit virtualization;
           desktop = "plasma";
@@ -80,6 +79,7 @@
     homeConfigurations = {
       gurbiggg = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        #inherit username;
         modules = [ ./user/home.nix];
       };
     };

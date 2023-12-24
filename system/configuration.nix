@@ -12,11 +12,8 @@
       ./pkgs.nix
       ../user/user.nix
       (./de + "/${desktop}.nix")
+      #../user/home.nix
     ];
-  
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
   
   # fix for vscode? exports wayland variables so vscode can use it
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
