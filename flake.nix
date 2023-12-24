@@ -21,7 +21,15 @@
     nvidia = false;
     virtualization = true;
     configPath = /home + "/${username}" + /nixos-conf;
-    pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    pkgs = import nixpkgs {
+      system = "x86_64-linux"; 
+      config = { 
+        allowUnfree = true;
+        permittedInsecurePackages = [
+          "electron-25.9.0"
+        ];
+      };
+    };
 
   in {
     nixosConfigurations = {
