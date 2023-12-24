@@ -19,8 +19,8 @@
       (unless (package-installed-p 'evil)
         (package-install 'evil))
       
-      ;(require 'evil)
-      ;(evil-mode 1)
+      (require 'evil)
+      (evil-mode 1)
 
       (use-package timu-rouge-theme
         :ensure t
