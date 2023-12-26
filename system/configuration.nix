@@ -13,6 +13,7 @@
       ../user/user.nix
       (./de + "/${desktop}.nix")
       #../user/home.nix
+      ./power.nix
     ];
   
   # fix for vscode? exports wayland variables so vscode can use it
