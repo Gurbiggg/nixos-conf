@@ -2,9 +2,12 @@
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;
+    package = pkgs.emacs-gtk;
     extraPackages = epkgs: with epkgs; [
-      evil
+      timu-rouge-theme
+      use-package
+      org
+      nix-mode
     ];
     extraConfig = ''
       (require 'package)
@@ -13,15 +16,8 @@
       (package-refresh-contents)
 
       (unless (package-installed-p 'use-package)
-        (packages-refresh-contents)
         (package-install 'use-package))
-
-      (unless (package-installed-p 'evil)
-        (package-install 'evil))
-        
-      ;(require 'evil)
-      ;(evil-mode 1)
-
+      
       (use-package timu-rouge-theme
         :ensure t
         :config

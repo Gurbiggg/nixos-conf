@@ -5,9 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, flatpaks, ... }:
   let
     # Options: gnome, plasma
     desktop = "gnome";
@@ -80,7 +81,11 @@
       gurbiggg = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         #inherit username;
-        modules = [ ./user/home.nix];
+        modules = [
+          flatpaks.homeManagerModules.default
+          ./user/home.nix
+          
+        ];
       };
     };
   };
