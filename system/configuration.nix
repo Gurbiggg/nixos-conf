@@ -14,6 +14,7 @@
       (./de + "/${desktop}.nix")
       #../user/home.nix
       ./power.nix
+      ./virtualization.nix
     ];
   
   # fix for vscode? exports wayland variables so vscode can use it
