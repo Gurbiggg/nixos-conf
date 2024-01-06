@@ -8,7 +8,7 @@
   #  flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
   };
 
-  outputs = { self, nixpkgs, home-manager, flatpaks, ... }:
+  outputs = { self, nixpkgs, home-manager,  ... }:
   let
     # Options: gnome, plasma
     desktop = "gnome";
