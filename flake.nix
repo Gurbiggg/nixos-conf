@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
+  #  flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
   };
 
   outputs = { self, nixpkgs, home-manager, flatpaks, ... }:
@@ -82,7 +82,7 @@
         inherit pkgs;
         #inherit username;
         modules = [
-          flatpaks.homeManagerModules.default
+         # flatpaks.homeManagerModules.default
           ./user/home.nix
           
         ];
