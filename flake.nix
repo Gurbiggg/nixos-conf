@@ -11,7 +11,7 @@
   outputs = { self, nixpkgs, home-manager, ... }:
   let
     # Options: gnome, plasma
-    desktop = "gnome";
+    desktop = "hyprland";
     
     # NixOS generation backups
     nixosGens = 10;
