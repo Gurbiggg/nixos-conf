@@ -11,7 +11,7 @@
   outputs = { self, nixpkgs, home-manager, ... }:
   let
     # Options: gnome, plasma
-    desktop = "hyprland";
+    desktop = "gnome";
     
     # NixOS generation backups
     nixosGens = 10;
@@ -71,7 +71,7 @@
           inherit locale;
           inherit nixosGens;
           # inherit virtualization;
-          desktop = "plasma";
+          desktop = "hyprland";
           inherit configPath;
         };
       };
