@@ -71,7 +71,7 @@
           inherit locale;
           inherit nixosGens;
           # inherit virtualization;
-          desktop = "hyprland";
+          desktop = "plasma";
           inherit configPath;
         };
       };
